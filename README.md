@@ -14,7 +14,7 @@ Incoming Webhooks
 Requirements:
 
 1. You must first enable the Webhooks integration for your Slack Account to get the Token. You can enable it here: https://slack.com/services/new/incoming-webhook
-2. Slack.Webhooks depends on RestSharp
+2. Slack.Webhooks depends on RestSharp 104.x and ServiceStack.Text 4.x
 
 Download:
 
