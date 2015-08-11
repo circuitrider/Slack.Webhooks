@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using RestSharp;
+using ServiceStack;
 using ServiceStack.Text;
 
 namespace Slack.Webhooks
@@ -17,11 +18,11 @@ namespace Slack.Webhooks
         {
             JsConfig.EmitLowercaseUnderscoreNames = true;
             JsConfig.IncludeNullValues = false;
-            JsConfig.PropertyConvention = JsonPropertyConvention.Lenient;
+            JsConfig.PropertyConvention = PropertyConvention.Lenient;
 
             if (!Uri.TryCreate(webhookUrl, UriKind.Absolute, out _webhookUri))
                 throw new ArgumentException("Please enter a valid Slack webhook url");
-           
+
             if (_webhookUri.Host != VALID_HOST)
                 throw new ArgumentException("Please enter a valid Slack webhook url");
 
